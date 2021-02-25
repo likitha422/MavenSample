@@ -1,0 +1,21 @@
+---
+- name: Setup Slave for Jenkins Job
+  hosts: 18.221.218.140
+  become: true
+  
+  tasks:
+  - name: Install Dependency for Deployment 
+    yum:
+    name: 
+    - git
+    - java-1.8.0-openjdk-devel
+    - docker
+    state: present
+  - name: start the httpd service 
+    service: 
+      name: docker
+      state: started 
+  - name: start the httpd service 
+    service: 
+      name: docker
+      state: started       
